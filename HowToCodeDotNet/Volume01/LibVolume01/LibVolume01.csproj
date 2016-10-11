@@ -1,0 +1,86 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>..\..\bin\</OutputPath>
+        <DefineConstants>DEBUG;TRACE;MONO</DefineConstants>
+        <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugSymbols>false</DebugSymbols>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    </PropertyGroup>
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProductVersion>8.0.30703</ProductVersion>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ProjectGuid>{0D98A82C-A307-48CA-929F-BC113623AC2A}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <RootNamespace>Devspace.HowToCodeDotNet01</RootNamespace>
+        <AssemblyName>LibHowToCodeDotNetVolume01</AssemblyName>
+        <WarningLevel>4</WarningLevel>
+        <StartupObject/>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="nunit.framework, Version=2.2.7.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
+            <HintPath>..\..\..\..\active-resources\NUnit-2.2.7-net-2.0\bin\nunit.framework.dll</HintPath>
+        </Reference>
+        <Reference Include="System"/>
+        <Reference Include="System.Data"/>
+        <Reference Include="System.Xml"/>
+    </ItemGroup>
+    <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets"/>
+    <ItemGroup>
+        <Compile Include="AbstractClassBridgePatternVariation.cs"/>
+        <Compile Include="AllEssentialsFactoryPattern.cs"/>
+        <Compile Include="AlwaysImplementToString.cs"/>
+        <Compile Include="ANullNotAlwaysNull.cs"/>
+        <Compile Include="AvoidingParametersWithoutIdentity.cs"/>
+        <Compile Include="DesigningConsistentClasses.cs"/>
+        <Compile Include="DisposableTypeIterateText.cs"/>
+        <Compile Include="DontExposeInternalState.cs"/>
+        <Compile Include="DynamicallyLoadUnload.cs"/>
+        <Compile Include="EverythingImplementInterfaces.cs"/>
+        <Compile Include="FindingTextWithinBuffer.cs"/>
+        <Compile Include="GenericsAreBlackBoxes.cs"/>
+        <Compile Include="GenericsAreBlackBoxesOldWay.cs"/>
+        <Compile Include="GettingStartedWithNUnit.cs"/>
+        <Compile Include="ImmutableScalableTypes.cs"/>
+        <Compile Include="ImplementGetHashcode.cs"/>
+        <Compile Include="InheritanceCanBeUsedEffectively.cs"/>
+        <Compile Include="LoadingAssembliesWithoutHassles.cs"/>
+        <Compile Include="MakingToStringGenerateStructuredOutput.cs"/>
+        <Compile Include="MockObjects.cs"/>
+        <Compile Include="ParsingNumbersFromBuffers.cs"/>
+        <Compile Include="PrivateClassBridgePatternVariation.cs"/>
+        <Compile Include="StringToBufViceVersa.cs"/>
+        <Compile Include="TestingLargeCodePieces.cs"/>
+        <Compile Include="UnderstandingAndImplementingSingletons.cs"/>
+        <Compile Include="UnderstandingAndUsingFunctors.cs"/>
+        <Compile Include="UnderstandingOverloadedReturnTypeProblem.cs"/>
+        <Compile Include="UsingPlaceholderInterfacesBaseClasses.cs"/>
+        <Compile Include="ValueAndReferenceTypeConfusion.cs"/>
+        <Compile Include="ValueTypesAndReferenceTypesConfusion.cs"/>
+        <Compile Include="VerifyingTheCorrectness.cs"/>
+        <Compile Include="WhatAreDelegates.cs"/>
+        <Compile Include="WhatDoesYieldGenerate.cs"/>
+        <Compile Include="WhatGenericMethodsDo.cs"/>
+        <Compile Include="WhenToUseStringBuilder.cs"/>
+        <Compile Include="WhyGenericsNeedNewClass.cs"/>
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\devspace.commons\trunk\NCommons.devspace\NCommons.csproj">
+            <Name>NCommons</Name>
+            <Project>{674BC4DB-EA37-4935-B5D5-0B3D8350C3E2}</Project>
+        </ProjectReference>
+        <ProjectReference Include="..\ExternalAssemblyDefinitions\ExternalAssemblyDefinitions.csproj">
+            <Name>ExternalAssemblyDefinitions</Name>
+            <Project>{C9F8EAD9-8276-41B1-B1CA-0125251BE61D}</Project>
+        </ProjectReference>
+    </ItemGroup>
+</Project>

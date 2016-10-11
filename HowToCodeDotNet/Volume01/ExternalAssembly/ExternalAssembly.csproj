@@ -1,0 +1,49 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE;MONO</DefineConstants>
+        <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugSymbols>false</DebugSymbols>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    </PropertyGroup>
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProductVersion>8.0.30703</ProductVersion>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ProjectGuid>{9734DE83-99AD-4EFC-93AB-0B11814266CF}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <RootNamespace>Devspace.HowToCodeDotNet01</RootNamespace>
+        <AssemblyName>ExternalAssembly</AssemblyName>
+        <WarningLevel>4</WarningLevel>
+        <StartupObject/>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System"/>
+        <Reference Include="System.Data"/>
+        <Reference Include="System.Xml"/>
+    </ItemGroup>
+    <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets"/>
+    <ItemGroup>
+        <Compile Include="Factory.cs"/>
+        <Compile Include="Implementation.cs"/>
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\ExternalAssemblyDefinitions\ExternalAssemblyDefinitions.csproj">
+            <Name>ExternalAssemblyDefinitions</Name>
+            <Project>{C9F8EAD9-8276-41B1-B1CA-0125251BE61D}</Project>
+        </ProjectReference>
+        <ProjectReference Include="..\..\..\devspace.commons\trunk\NCommons.devspace\NCommons.csproj">
+            <Name>NCommons</Name>
+            <Project>{674BC4DB-EA37-4935-B5D5-0B3D8350C3E2}</Project>
+        </ProjectReference>
+    </ItemGroup>
+</Project>
